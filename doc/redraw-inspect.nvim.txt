@@ -1,0 +1,47 @@
+*redraw-inspect.nvim.txt*
+
+==============================================================================
+Lua module: redraw-inspect                *redraw-inspect.nvim-redraw-inspect*
+
+start({opts})                                         *redraw-inspect.start()*
+  Starts redraw inspect.
+
+  Parameters: ~
+    {opts} (RedrawInspectStartOption?) 
+
+stop({opts})                                           *redraw-inspect.stop()*
+  Stops redraw inspect.
+
+  Parameters: ~
+    {opts} (RedrawInspectStopOption?) 
+
+==============================================================================
+STRUCTURE                                      *redraw-inspect.nvim-STRUCTURE*
+
+RedrawInspectRedrawContext                        *RedrawInspectRedrawContext*
+
+- {bufnr} (integer)
+- {window_id} (integer)
+- {ns_id} (integer)
+- {row} (integer) 0-based index
+
+RedrawInspectStartOption                            *RedrawInspectStartOption*
+
+- {window_id} (integer?) (default: current window id)
+- {on_redraw} (fun(ctx:RedrawInspectRedrawContext)?) called on redraw line (default: do nothing)
+
+RedrawInspectStopOption                              *RedrawInspectStopOption*
+
+- {window_id} (integer?) (default: current window id)
+
+==============================================================================
+EXAMPLES                                        *redraw-inspect.nvim-EXAMPLES*
+
+>lua
+  require("redraw-inspect").start({
+    on_redraw = require("redraw-inspect.util").highlight_line(),
+  })
+<
+
+==============================================================================
+vim:tw=78:ts=8:ft=help
