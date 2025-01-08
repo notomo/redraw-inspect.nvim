@@ -6,7 +6,6 @@ local callbacks = {}
 vim.api.nvim_set_decoration_provider(ns, {})
 vim.api.nvim_set_decoration_provider(ns, {
   on_win = function(_, window_id)
-    ---@diagnostic disable-next-line: redundant-return-value
     return callbacks[window_id] ~= nil
   end,
   on_line = function(_, window_id, bufnr, row)
