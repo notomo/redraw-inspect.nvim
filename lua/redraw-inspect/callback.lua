@@ -22,7 +22,7 @@ vim.api.nvim_set_decoration_provider(ns, {
 local M = {}
 
 local group_name = function(window_id)
-  return ("redraw-inspect-%s"):format(window_id)
+  return ("redraw-inspect.window_%s"):format(window_id)
 end
 
 function M.start(window_id, on_redraw)

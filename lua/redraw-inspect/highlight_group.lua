@@ -5,7 +5,7 @@ local setup_highlight_groups = function()
   }
 end
 
-local group = vim.api.nvim_create_augroup("redraw-inspect", {})
+local group = vim.api.nvim_create_augroup("redraw-inspect.highlight_group", {})
 vim.api.nvim_create_autocmd({ "ColorScheme" }, {
   group = group,
   pattern = { "*" },
